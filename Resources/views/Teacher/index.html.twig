@@ -1,0 +1,12 @@
+{% extends 'TeacherBundle:Default:teacherBase.html.twig' %}
+
+{# The height in pixels of each minute #}
+{% set minH = 1 %}
+{% set dayName = ["Astelehena", "Asteartea", "Asteazkena", "Osteguna" , "Ostirala"] %}
+
+{# Time until the timetable will be shown #}
+{% set lastHour = "18:00" | toDateTime %}
+
+{% block article %}
+	{% include 'TimetableBundle:includes:timetableSection.html.twig' %}
+{% endblock %}

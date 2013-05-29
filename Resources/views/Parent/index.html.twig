@@ -1,0 +1,16 @@
+{% extends 'ParentsBundle:Default:parentsBase.html.twig' %}
+
+{# The height in pixels of each minute #}
+{% set minH = 1 %}
+{% set dayName = ["Astelehena", "Asteartea", "Asteazkena", "Osteguna" , "Ostirala"] %}
+
+{# Time until the timetable will be shown #}
+{% set lastHour = "18:00" | toDateTime %}
+
+{% block article %}
+	{% for timetable in childrenTimetable %}
+		{% set student = timetable[0].subject.enroled[0].student %}
+		{% set studentName = student.name ~ ' ' ~ student.surname1 %}
+		{% include 'TimetableBundle:includes:timetableSection.html.twig' %}
+	{% endfor %}
+{% endblock %}

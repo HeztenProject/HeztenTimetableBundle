@@ -1,0 +1,38 @@
+<section id="timetable-list">
+	<h2><i class="nav-icon-clock"></i>{{ studentName is defined ? studentName : 'ORDUTEGIA'}}</h2>
+	<ul class="odd-column side-header">
+		<li style="height:20px"></li> 
+		{% for i in 8..17 %}
+		<li style="height:{{minH *30}}px">{{ i }}:00<br>{{ i }}:30</li>
+		<li style="height:{{minH *30}}px">{{ i }}:30<br>{{ i + 1 }}:00</li>
+		{% endfor %}
+	</ul>
+	<ul class="even-column">
+		{# Start variables #}
+		{% set currentDay = 1 %}
+		{% set lastTime = "8:00" | toDateTime %}
+		{# Print weekday header #}
+		<li style="height:20px">{{ dayName[0] }}</li>
+		{% for t in timetable %}
+			{% if currentDay != t.weekday %}
+				{# Fill the full column #}
+				<li style="height:{{ lastTime | minutesTo(lastHour)}}px"></li>
+				{# Add new column #}
+				</ul><ul class="{{ currentDay % 2 == 1 ? 'odd' : 'even'}}-column">
+				{# Print weekday header #}
+				<li style="height:20px">{{ dayName[currentDay] }}</li>
+				{# Reset variables #}
+			 	{% set currentDay = currentDay + 1 %}
+			 	{% set lastTime = "08:00" | toDateTime %}
+			{% endif %}
+			{% set difference = (t.beginTime | minutesTo(lastTime)) * minH %}
+			{% if difference > 0 %}
+			<li style="height:{{difference}}px"></li>
+			{% endif %}
+			<li style="height:{{ (t.finishTime | minutesTo(t.beginTime)) * minH}}px" class="subject-item">
+				{{t.subject.name}} ({{t.subject.course.getShortName}})</li>
+			{% set lastTime = t.finishTime %}
+		{% endfor %}
+		<li style="height:{{ lastTime | minutesTo(lastHour)}}px"></li>
+	</ul>
+</section>

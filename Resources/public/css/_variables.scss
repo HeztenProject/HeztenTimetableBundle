@@ -1,0 +1,28 @@
+@import "compass/css3";
+@import "compass/utilities/sprites";
+
+//*********COLORS************//
+
+$white: #FAFCFB;
+$darkBlue: #0D1C1C;
+$asideBlue: #C1CFD0;
+$articleBlue: #CED9DA;
+$secondaryBlue: #B3B9B8;
+$black: #333333;
+$gray: #4D4D4D;
+$red: #990000;
+$green: #468847;
+//*********ALL**************//
+$headerSize: 50px;
+$wrapWidth: 900px;
+
+//*******MIXINGS***********//
+
+@mixin standard-box($radius)
+{
+  @include border-radius($radius);
+  background-color: $white;
+  @include box-shadow($darkBlue 0px 0px 5px);
+  padding: 10px 0px;
+  overflow:hidden;
+}

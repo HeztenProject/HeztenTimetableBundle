@@ -1,0 +1,41 @@
+@import "compass/css3";
+@import "variables";
+
+#timetable-list
+{
+  ul
+  {
+    @include background-image(linear-gradient($white, $white 50%, tint($asideBlue,70) 50%));
+    background-position: 0px -10px;
+    background-size: 60px 60px;
+    width: 18%;
+    float:left;
+    &.odd-column
+    {
+      background:$asideBlue;
+      background: rgba($asideBlue,0.5);
+    }
+    &.even-column
+    {
+      li.subject-item
+      {
+        background: $white;
+      }
+    }
+    &.side-header
+    {
+      width:10%;
+    }
+    li
+    {
+      border-bottom: 1px solid $secondaryBlue;
+      text-align:center;
+      padding: 0px 5px;
+      @include box-sizing(border-box);
+      &.with-top
+      {
+        border-top: 1px solid $secondaryBlue;
+      }
+    }
+  }
+}
