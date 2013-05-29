@@ -11,7 +11,7 @@
         "doctrine/mongodb-odm-bundle": "dev-master"
     },
     "autoload": {
-        "psr-0": { "Hezten\\TimetableBundle": "" }
+        "psr-0": { "Hezten\\HeztenTimetableBundle": "" }
     },
-    "target-dir": "Hezten/TimetableBundle"
+    "target-dir": "Hezten/HeztenTimetableBundle"
 }

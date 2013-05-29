@@ -1,6 +1,6 @@
 <?php
 
-namespace Hezten\TimetableBundle\DependencyInjection;
+namespace Hezten\HeztenTimetableBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;

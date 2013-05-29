@@ -1,4 +1,4 @@
-Hezten\TimetableBundle\Entity\SubjectTimetable:
+Hezten\HeztenTimetableBundle\Entity\SubjectTimetable:
 	type: mapped-superclass
 	table: hezten_timetablebundle
 	id: 
