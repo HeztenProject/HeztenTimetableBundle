@@ -1,8 +1,8 @@
 <?php 
 
-namespace Hezten\TimetableBundle\Entity;
+namespace Hezten\HeztenTimetableBundle\Entity;
 
-use Hezten\TimetableBundle\Model\SubjectTimetable as BaseSubjectTimetable;
+use Hezten\HeztenTimetableBundle\Model\SubjectTimetable as BaseSubjectTimetable;
 
 
 class SubjectTimetable extends BaseSubjectTimetable

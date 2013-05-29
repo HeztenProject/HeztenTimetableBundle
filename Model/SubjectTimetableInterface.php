@@ -1,6 +1,6 @@
 <?php 
 
-namespace Hezten\TimetableBundle\Model;
+namespace Hezten\HeztenTimetableBundle\Model;
 
 /**
 *	SubjectTimetable model

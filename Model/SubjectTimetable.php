@@ -1,6 +1,6 @@
 <?php
 
-namespace Hezten\TimetableBundle\Model;
+namespace Hezten\HeztenTimetableBundle\Model;
 
 use Symfony\Component\Validator\Constraints as Assert;
 use JMS\Serializer\Annotation\ExclusionPolicy;
