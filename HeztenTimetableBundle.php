@@ -1,9 +1,9 @@
 <?php
 
-namespace Hezten\HeztenTimetableBundle;
+namespace Hezten\TimetableBundle;
 
-use Symfony\Component\HttpKernel\Bundle\Bundle as BaseBundle;
+use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class HeztenTimetableBundle extends BaseBundle
+class HeztenTimetableBundle extends Bundle
 {
 }

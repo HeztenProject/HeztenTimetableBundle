@@ -1,23 +1,22 @@
-Hezten\HeztenTimetableBundle\Entity\SubjectTimetable:
-	type: mapped-superclass
-	table: hezten_timetablebundle
-	id: 
-		id:
-			type: integer
-			generator:
-				strategy: AUTO
-	fields:
-		weekday:
-			type: integer
-		beginTime:
-			type: time
-		finishTime:
-			type: time
-		beginDate:
-			type: date
-		finishDate:
-			type: date
-	manyToOne:
-		subject:
-			targetEntity: Hezten/CoreBundle/Entity/Subject
-			
+Hezten\TimetableBundle\Entity\SubjectTimetable:
+    type: mappedSuperclass
+    table: hezten_timetablebundle
+    id: 
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        weekday:
+            type: integer
+        beginTime:
+            type: time
+        finishTime:
+            type: time
+        beginDate:
+            type: date
+        finishDate:
+            type: date
+    manyToOne:
+        subject:
+            targetEntity: "SanFidel\AdminBundle\Entity\Subject"

@@ -1,6 +1,6 @@
 <?php
 
-namespace Hezten\HeztenTimetableBundle\DependencyInjection;
+namespace Hezten\TimetableBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -18,12 +18,15 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('timetable');
+        $rootNode = $treeBuilder->root('hezten_timetable');
 
-        // Here you should define the parameters that are allowed to
-        // configure your bundle. See the documentation linked above for
-        // more information on that topic.
-
+        $rootNode
+            ->children()
+                ->scalarNode('db_driver')->cannotBeOverwritten()->isRequired()->cannotBeEmpty()->end()
+                ->scalarNode('subjecttimetable_class')->isRequired()->cannotBeEmpty()->end()
+                ->scalarNode('subjecttimetable_manager')->defaultValue('hezten_timetable.subjecttimetable_manager.default')->cannotBeEmpty()->end()
+            ->end();
         return $treeBuilder;
+        echo 'aaaaaa';
     }
 }

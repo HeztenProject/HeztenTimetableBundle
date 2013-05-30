@@ -1,7 +1,4 @@
-parameters:
-#    timetable.example.class: SanFidel\TimetableBundle\Example
-
 services:
-     hezten_timetable.subjecttimetable_manager.default:
+    hezten_timetable.subjecttimetable_manager.default:
          class: "Hezten\TimetableBundle\EntityManager\SubjectTimetableManager"
          arguments: [@doctrine.orm.entity_manager, %hezten_timetable.subjecttimetable_class%]

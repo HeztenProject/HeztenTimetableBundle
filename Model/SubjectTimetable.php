@@ -1,45 +1,45 @@
 <?php
 
-namespace Hezten\HeztenTimetableBundle\Model;
+namespace Hezten\TimetableBundle\Model;
 
 use Symfony\Component\Validator\Constraints as Assert;
 use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Annotation\Exclude;
 
-use Hezten\CoreBundle\Entity\Subject;
+use SanFidel\AdminBundle\Entity\Subject;
 
 abstract class SubjectTimetable
 {
 
-	private $id;
+	protected $id;
 	
 	/** 
 	 *	@Assert\Max(limit = 7)
 	 *	@Assert\Min(limit = 1) 
 	 */
-	private $weekday;
+	protected $weekday;
 	
 	/** 
 	 *  @Assert\Time
 	 */
-	private $beginTime;
+	protected $beginTime;
 	
 	/** 
 	 *  @Assert\Time  
 	 */
-	private $finishTime;
+	protected $finishTime;
 	
 	/**  
 	 *	@Assert\Date 
 	 */
-	private $beginDate;
+	protected $beginDate;
 	
 	/** 
 	 *  @Assert\Date 
 	 */
-	private $finishDate;
+	protected $finishDate;
 	
-	private $subject;
+	protected $subject;
 
     /*Constants */
 	const WEEKDAY_MONDAY = 1;
@@ -133,12 +133,12 @@ abstract class SubjectTimetable
      * @param \SanFidel\AdminBundle\Entity\Subject $subject
      * @return SubjectTimetable
      */
-    public function setSubject(Hezten/CoreBundle/Entity/Subject $subject = null)
+    /*public function setSubject(Subject $subject = null)
     {
         $this->subject = $subject;
     
         return $this;
-    }
+    }*/
 
     /**
      * Get subject
